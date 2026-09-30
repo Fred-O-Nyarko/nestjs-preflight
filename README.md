@@ -40,26 +40,67 @@ The scanner reads TypeScript and JavaScript source, `package.json` and lockfiles
 
 ## Install the skill
 
-The skill lives in [`skills/nestjs-preflight/`](skills/nestjs-preflight/) and uses the standard `SKILL.md` format.
+The skill lives in [`skills/nestjs-preflight/`](skills/nestjs-preflight/) and uses the open Agent Skills format (`SKILL.md`), so the same folder works in every agent below. The scanner only needs Node ≥ 18.
 
-**Claude Code** (plugin marketplace):
+### Any agent, one command
+
+```bash
+npx skills add Fred-O-Nyarko/nestjs-preflight
+```
+
+The [`skills` CLI](https://skills.sh) finds the skill in this repo and asks which agents to install it for: Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, Windsurf and others. Add `-g` to install it for your user instead of the current project, or `-a claude-code` (or `codex`, `cursor`, …) to pick an agent without being asked.
+
+### Claude Code
 
 ```
 /plugin marketplace add Fred-O-Nyarko/nestjs-preflight
 /plugin install nestjs-preflight@nestjs-preflight
 ```
 
-Or copy the folder in by hand:
+Or copy the folder by hand:
 
 ```bash
 git clone https://github.com/Fred-O-Nyarko/nestjs-preflight
-cp -r nestjs-preflight/skills/nestjs-preflight ~/.claude/skills/        # for all projects
-# or: cp -r … <your-project>/.claude/skills/                                          # for one repo
+cp -r nestjs-preflight/skills/nestjs-preflight ~/.claude/skills/     # all projects
+cp -r nestjs-preflight/skills/nestjs-preflight .claude/skills/       # this project only
 ```
 
-**Claude apps (claude.ai, desktop, Cowork):** zip the `skills/nestjs-preflight` folder and upload it under *Settings → Capabilities → Skills*.
+### Claude apps (claude.ai, desktop, Cowork)
 
-**Other agents that support Agent Skills:** copy `skills/nestjs-preflight` into your agent's skills directory. The scanner needs nothing except Node ≥ 18.
+Download [`nestjs-preflight-skill.zip`](https://github.com/Fred-O-Nyarko/nestjs-preflight/releases/latest) from the latest release, or zip the `skills/nestjs-preflight` folder yourself. Then upload it under *Settings → Capabilities → Skills*.
+
+### Codex
+
+In Codex, ask `$skill-installer` to install the skill from `https://github.com/Fred-O-Nyarko/nestjs-preflight/tree/main/skills/nestjs-preflight`. Or copy the folder:
+
+```bash
+cp -r nestjs-preflight/skills/nestjs-preflight ~/.agents/skills/     # all projects
+cp -r nestjs-preflight/skills/nestjs-preflight .agents/skills/       # this repo only
+```
+
+### GitHub Copilot (CLI, VS Code, JetBrains, cloud agent)
+
+```bash
+gh skill install Fred-O-Nyarko/nestjs-preflight nestjs-preflight
+```
+
+Or copy the folder to `.github/skills/` in a repo, or to `~/.copilot/skills/` for all projects.
+
+### Cursor
+
+Copy the folder to `.cursor/skills/` in a project, or to `~/.cursor/skills/` for all projects. Cursor also picks up skills already installed in `~/.claude/skills/` and `~/.agents/skills/`.
+
+### Gemini CLI
+
+```bash
+gemini skills install https://github.com/Fred-O-Nyarko/nestjs-preflight.git
+```
+
+Or copy the folder to `.gemini/skills/` in a project, or to `~/.gemini/skills/` for all projects.
+
+### Anything else
+
+Copy `skills/nestjs-preflight` into your agent's skills directory. Many agents also read the shared `.agents/skills/` (project) and `~/.agents/skills/` (user) locations.
 
 ## Use it
 

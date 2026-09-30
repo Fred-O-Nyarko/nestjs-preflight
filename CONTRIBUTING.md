@@ -27,4 +27,4 @@ The detailed guidance for each check lives in `skills/nestjs-preflight/reference
 
 ## Releasing
 
-Bump `version` in `package.json`, `.claude-plugin/plugin.json` and `VERSION` in `scan.mjs`, then update `CHANGELOG.md`.
+Bump `version` in `package.json`, `.claude-plugin/plugin.json`, the `metadata.version` in `SKILL.md` and `VERSION` in `scan.mjs`, then update `CHANGELOG.md`. Push a tag such as `v0.1.1`. The `release` workflow runs the tests, creates a GitHub release, and attaches `nestjs-preflight-skill.zip` for Claude app users. Then run `npm publish`.
