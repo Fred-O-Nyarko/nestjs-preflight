@@ -1,0 +1,19 @@
+{
+  "name": "nestjs-preflight",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent skill + zero-dependency scanner that runs the NestJS production checklist (17 checks) against a NestJS codebase before you deploy.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "nestjs-preflight": "skills/nestjs-preflight/scripts/scan.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/scan.test.mjs",
+    "scan": "node skills/nestjs-preflight/scripts/scan.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["nestjs", "production", "checklist", "deploy", "agent-skill", "claude", "skills"]
+}

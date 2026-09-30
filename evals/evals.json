@@ -1,0 +1,23 @@
+{
+  "skill_name": "nestjs-preflight",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "we're about to put this nest api into prod on k8s with 3 replicas next week — can you check if it's actually ready? repo is test/fixtures/bad-app",
+      "expected_output": "A verified report (nestjs-preflight-report.md) with verdict 'Not ready', FAILs for config validation, shutdown hooks/shell-form CMD, unlocked @Cron on replicas, opt-in auth, no security headers + cors:true, no global ValidationPipe, Node 20 EOL + mismatched @nestjs majors, synchronize:true; file:line evidence; a rotation warning for the Dockerfile ENV secret and .env; an offer to fix FAILs first.",
+      "files": ["test/fixtures/bad-app"]
+    },
+    {
+      "id": 2,
+      "prompt": "Pre-launch review please for test/fixtures/good-app. It's a payments service on EKS, max 6 pods via HPA, RDS postgres with max_connections 100.",
+      "expected_output": "Verdict 'Ready' or 'Ready with caveats' with no invented FAILs; the pool math computed with the given max_connections (10 × 7 = 70 ≤ 100, noting the migration job and other clients); VERIFY items for check 12 resolved or phrased as specific questions.",
+      "files": ["test/fixtures/good-app"]
+    },
+    {
+      "id": 3,
+      "prompt": "In test/fixtures/bad-app, the cron job is sending our hourly digest 3 times. Why, and can you fix it?",
+      "expected_output": "Identifies check 4 (scheduled jobs run on every replica), explains why, confirms whether @nestjs/locks is available for the installed Nest version before recommending it, offers a fallback (advisory lock / redlock / BullMQ), and makes a minimal change only after explaining it.",
+      "files": ["test/fixtures/bad-app"]
+    }
+  ]
+}

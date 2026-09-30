@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+  template:
+    spec:
+      terminationGracePeriodSeconds: 45
+      containers:
+        - name: api
+          image: api:latest
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sleep", "5"]
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: 3000
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 3000
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: api
+spec:
+  minReplicas: 3
+  maxReplicas: 6

@@ -1,0 +1,11 @@
+{
+  "name": "nestjs-preflight",
+  "owner": { "name": "Frederick" },
+  "plugins": [
+    {
+      "name": "nestjs-preflight",
+      "source": "./",
+      "description": "Run the NestJS team's 17-point production checklist against your NestJS app before you deploy."
+    }
+  ]
+}

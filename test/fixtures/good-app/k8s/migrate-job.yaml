@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: api-migrate
+  annotations:
+    helm.sh/hook: pre-upgrade
+spec:
+  template:
+    spec:
+      containers:
+        - name: migrate
+          image: api:latest
+          command: ["npm", "run", "migration:run"]
