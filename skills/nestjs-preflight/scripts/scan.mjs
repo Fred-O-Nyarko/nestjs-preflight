@@ -16,6 +16,8 @@
  * Anything it cannot decide statically is reported as `manual` so a human
  * (or the agent running the skill) can verify it.
  *
+ * Author: Frederick Obeng-Nyarko (https://github.com/Fred-O-Nyarko)
+ * Repository: https://github.com/Fred-O-Nyarko/nestjs-preflight
  * MIT License — see LICENSE at the repository root.
  */
 import fs from 'node:fs';

@@ -1,5 +1,7 @@
 # nestjs-preflight
 
+[![ci](https://github.com/Fred-O-Nyarko/nestjs-preflight/actions/workflows/ci.yml/badge.svg)](https://github.com/Fred-O-Nyarko/nestjs-preflight/actions/workflows/ci.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **An open-source agent skill that runs the NestJS team's production checklist against your NestJS app before you deploy.**
 
 The NestJS team published [*NestJS Production Checklist: 17 Checks Before You Deploy*](https://dev.to/nestjs/nestjs-production-checklist-17-checks-before-you-deploy-1d0j). This repo turns that checklist into something an AI coding agent can run for you. The agent scans your codebase and deploy config, checks each finding against the actual code, writes a pass/warn/fail report with `file:line` evidence, and offers to fix the problems one at a time.
@@ -43,14 +45,14 @@ The skill lives in [`skills/nestjs-preflight/`](skills/nestjs-preflight/) and us
 **Claude Code** (plugin marketplace):
 
 ```
-/plugin marketplace add <owner>/nestjs-preflight
+/plugin marketplace add Fred-O-Nyarko/nestjs-preflight
 /plugin install nestjs-preflight@nestjs-preflight
 ```
 
 Or copy the folder in by hand:
 
 ```bash
-git clone https://github.com/<owner>/nestjs-preflight
+git clone https://github.com/Fred-O-Nyarko/nestjs-preflight
 cp -r nestjs-preflight/skills/nestjs-preflight ~/.claude/skills/        # for all projects
 # or: cp -r … <your-project>/.claude/skills/                                          # for one repo
 ```
@@ -91,7 +93,7 @@ It then offers to fix the FAIL items first. It asks before it adds dependencies,
 node skills/nestjs-preflight/scripts/scan.mjs path/to/your-nest-app
 
 # or without cloning
-npx github:<owner>/nestjs-preflight path/to/your-nest-app
+npx github:Fred-O-Nyarko/nestjs-preflight path/to/your-nest-app
 ```
 
 | Option | |
@@ -113,7 +115,7 @@ Evidence snippets never include secret values; they're redacted.
 
 ```yaml
 - uses: actions/checkout@v4
-- run: npx github:<owner>/nestjs-preflight . --ci --out preflight.md
+- run: npx github:Fred-O-Nyarko/nestjs-preflight . --ci --out preflight.md
 ```
 
 The scanner is heuristic, so gate on FAIL only and read the WARN items.
@@ -151,6 +153,17 @@ Pull requests are welcome, especially false-positive and false-negative fixes th
 ```bash
 npm test   # node:test, no dependencies
 ```
+
+## Author
+
+**Frederick Obeng-Nyarko**
+
+- GitHub: [@Fred-O-Nyarko](https://github.com/Fred-O-Nyarko)
+- LinkedIn: [frederick-o-12081aa2](https://www.linkedin.com/in/frederick-o-12081aa2/)
+- X: [@fred_o_nyarko](https://x.com/fred_o_nyarko)
+- Email: [nernuer@gmail.com](mailto:nernuer@gmail.com)
+
+Built for the love of open source. If it saves you a bad deploy, a star on the repo is appreciated.
 
 ## License
 

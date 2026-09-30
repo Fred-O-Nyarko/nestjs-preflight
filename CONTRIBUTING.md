@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping. Here's how to get a change merged quickly.
+Thanks for helping. Here's how to get a change merged quickly. The maintainer is [Frederick Obeng-Nyarko](https://github.com/Fred-O-Nyarko); open an issue or a pull request at <https://github.com/Fred-O-Nyarko/nestjs-preflight>.
 
 ## Ground rules
 

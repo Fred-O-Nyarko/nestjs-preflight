@@ -2,6 +2,10 @@
 name: nestjs-preflight
 description: Run the NestJS team's 17-point production checklist against a NestJS codebase before it ships — config validation, SIGTERM and graceful shutdown, Docker, cron jobs on replicas, deny-by-default auth, headers/CORS/rate limits, input validation, response serialization, idempotency, Node/Nest versions, timeouts, circuit breakers, migrations, pool math, request scope, error handling, health checks, logging and monitoring. Produces an evidence-backed pass/warn/fail report and offers fixes. Use whenever someone asks whether a NestJS app or API is production-ready, wants a preflight, pre-deploy, launch-readiness, reliability or security review of a Nest service, is about to deploy or scale a NestJS app, or asks what to check before going live — even if they never say "checklist".
 license: MIT
+metadata:
+  author: Frederick Obeng-Nyarko
+  version: 0.1.0
+  repository: https://github.com/Fred-O-Nyarko/nestjs-preflight
 ---
 
 # NestJS preflight

@@ -2,7 +2,19 @@
   "name": "nestjs-preflight",
   "description": "Run the NestJS team's 17-point production checklist against your NestJS app before you deploy: evidence-backed report plus guided fixes.",
   "version": "0.1.0",
-  "author": { "name": "Frederick" },
+  "author": {
+    "name": "Frederick Obeng-Nyarko",
+    "email": "nernuer@gmail.com",
+    "url": "https://github.com/Fred-O-Nyarko"
+  },
   "license": "MIT",
-  "keywords": ["nestjs", "production", "deploy", "checklist", "audit"]
+  "keywords": [
+    "nestjs",
+    "production",
+    "deploy",
+    "checklist",
+    "audit"
+  ],
+  "homepage": "https://github.com/Fred-O-Nyarko/nestjs-preflight",
+  "repository": "https://github.com/Fred-O-Nyarko/nestjs-preflight"
 }

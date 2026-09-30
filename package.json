@@ -5,6 +5,19 @@
   "description": "Agent skill + zero-dependency scanner that runs the NestJS production checklist (17 checks) against a NestJS codebase before you deploy.",
   "type": "module",
   "license": "MIT",
+  "author": {
+    "name": "Frederick Obeng-Nyarko",
+    "email": "nernuer@gmail.com",
+    "url": "https://github.com/Fred-O-Nyarko"
+  },
+  "homepage": "https://github.com/Fred-O-Nyarko/nestjs-preflight#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fred-O-Nyarko/nestjs-preflight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fred-O-Nyarko/nestjs-preflight/issues"
+  },
   "bin": {
     "nestjs-preflight": "skills/nestjs-preflight/scripts/scan.mjs"
   },
@@ -15,5 +28,13 @@
   "engines": {
     "node": ">=18"
   },
-  "keywords": ["nestjs", "production", "checklist", "deploy", "agent-skill", "claude", "skills"]
+  "keywords": [
+    "nestjs",
+    "production",
+    "checklist",
+    "deploy",
+    "agent-skill",
+    "claude",
+    "skills"
+  ]
 }
