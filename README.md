@@ -1,6 +1,6 @@
 # nestjs-preflight
 
-[![ci](https://github.com/Fred-O-Nyarko/nestjs-preflight/actions/workflows/ci.yml/badge.svg)](https://github.com/Fred-O-Nyarko/nestjs-preflight/actions/workflows/ci.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![ci](https://github.com/Fred-O-Nyarko/nestjs-preflight/actions/workflows/ci.yml/badge.svg)](https://github.com/Fred-O-Nyarko/nestjs-preflight/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/nestjs-preflight.svg)](https://www.npmjs.com/package/nestjs-preflight) [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **An open-source agent skill that runs the NestJS team's production checklist against your NestJS app before you deploy.**
 
@@ -92,7 +92,10 @@ It then offers to fix the FAIL items first. It asks before it adds dependencies,
 # from a clone
 node skills/nestjs-preflight/scripts/scan.mjs path/to/your-nest-app
 
-# or without cloning
+# from npm, no install needed
+npx nestjs-preflight path/to/your-nest-app
+
+# or straight from GitHub
 npx github:Fred-O-Nyarko/nestjs-preflight path/to/your-nest-app
 ```
 
@@ -115,7 +118,7 @@ Evidence snippets never include secret values; they're redacted.
 
 ```yaml
 - uses: actions/checkout@v4
-- run: npx github:Fred-O-Nyarko/nestjs-preflight . --ci --out preflight.md
+- run: npx nestjs-preflight . --ci --out preflight.md
 ```
 
 The scanner is heuristic, so gate on FAIL only and read the WARN items.

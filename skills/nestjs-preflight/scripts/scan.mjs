@@ -1220,7 +1220,8 @@ export function scan(rootArg, { only = null, today = null } = {}) {
 }
 
 const isMain = (() => {
-  try { return process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url)); } catch { return false; }
+  // realpath: when installed via npm/npx, argv[1] is a symlink in node_modules/.bin
+  try { return !!process.argv[1] && fs.realpathSync(process.argv[1]) === fs.realpathSync(fileURLToPath(import.meta.url)); } catch { return false; }
 })();
 
 if (isMain) {

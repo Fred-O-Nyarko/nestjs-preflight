@@ -3,6 +3,7 @@
 ## 0.1.0 — 2026-09-30
 
 - First release: the skill (`SKILL.md` plus per-section references) and a zero-dependency scanner covering all 17 checks in the NestJS Production Checklist.
+- Published to npm: run `npx nestjs-preflight <path>`.
 - Markdown and JSON output, `--only`, `--ci` / `--fail-on`.
 - Feature detection for recent Nest APIs in the installed typings.
 - Good and bad fixture apps with a `node:test` suite.
